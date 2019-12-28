@@ -29,7 +29,7 @@ namespace Xamarin.Forms.Controls.Issues
 
 			Label instructions = new Label
 			{
-				Text = "Check the Title area. It should have a red background with no visible border, neither to the left or between it and the yellow page.\n"
+				Text = "Check the Title area. It should have a red background with no visible padding, neither to the left or between it and the yellow page below.\n"
 				     + "There should be no text in the title area.\n\n"
 					 + "Then click button 'To 8602A' below\n\n"
 			};
