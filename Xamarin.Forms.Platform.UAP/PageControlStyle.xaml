@@ -42,21 +42,21 @@
 									<Border x:Name="TitleArea" Height="{ThemeResource TitleBarHeight}" Visibility="{TemplateBinding TitleVisibility}" HorizontalAlignment="Stretch">
 										<Grid x:Name="TitleViewPresenter" VerticalAlignment="Center" Background="{TemplateBinding ToolbarBackground}" HorizontalAlignment="Stretch">
 
-											<Grid.ColumnDefinitions>
-												<ColumnDefinition Width="Auto"/>
-												<ColumnDefinition Width="Auto"/>
-												<ColumnDefinition Width="*"/>
-											</Grid.ColumnDefinitions>
+                                            <Grid Visibility="{Binding Path=TitleViewVisibility, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ReverseVisibilityConverter}}">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
 
-											<Image Grid.Column="0" Source="{TemplateBinding TitleIcon}" />
+                                                <Image Grid.Column="0" Source="{TemplateBinding TitleIcon}" />
 
-											<Border Grid.Column="1" Height="{ThemeResource TitleBarHeight}" Visibility="{TemplateBinding TitleVisibility}">
-												<TextBlock Text="{Binding Title}" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{TemplateBinding TitleBrush}" Style="{ThemeResource TitleTextBlockStyle}" />
-											</Border>
+                                                <Border Grid.Column="1" Height="{ThemeResource TitleBarHeight}" Visibility="{TemplateBinding TitleVisibility}">
+                                                    <TextBlock Text="{Binding Title}" TextWrapping="NoWrap" VerticalAlignment="Center" Margin="10,0,0,0" Foreground="{TemplateBinding TitleBrush}" Style="{ThemeResource TitleTextBlockStyle}" />
+                                                </Border>
+                                            </Grid>
 
-											<ContentPresenter Grid.Column="2" Content="{Binding TitleView, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource ViewToRenderer}}" Visibility="{TemplateBinding TitleViewVisibility}" HorizontalAlignment="Stretch" />
-
-										</Grid>
+                                            <ContentPresenter Height="{ThemeResource TitleBarHeight}" Content="{Binding TitleView, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource ViewToRenderer}}" Visibility="{TemplateBinding TitleViewVisibility}" HorizontalAlignment="Stretch" />
+                                        </Grid>
 									</Border>
 								</uwp:FormsCommandBar.Content>
 							</uwp:FormsCommandBar>
