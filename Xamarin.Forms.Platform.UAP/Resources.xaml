@@ -25,7 +25,8 @@
 	<uwp:CollapseWhenEmptyConverter x:Key="CollapseWhenEmpty" />
 	<uwp:BoolToVisibilityConverter x:Key="BoolVisibilityConverter" />
 	<uwp:BoolToVisibilityConverter x:Key="InvertedBoolVisibilityConverter" FalseIsVisible="True" />
-	<uwp:PageToRenderedElementConverter x:Key="PageToRenderer" />
+    <uwp:ReverseVisibilityConverter x:Key="ReverseVisibilityConverter" />
+    <uwp:PageToRenderedElementConverter x:Key="PageToRenderer" />
 	<uwp:ImageConverter x:Key="ImageConverter" />
 	<uwp:ViewToRendererConverter x:Key="ViewToRenderer" />
 	<uwp:ColorConverter x:Key="ColorConverter" />
