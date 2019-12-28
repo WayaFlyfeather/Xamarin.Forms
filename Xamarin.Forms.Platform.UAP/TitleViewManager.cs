@@ -50,7 +50,10 @@ namespace Xamarin.Forms.Platform.UWP
 		void UpdateTitleViewWidth()
 		{
 			if (TitleView == null || TitleViewPresenter == null || CommandBar == null)
+			{
+				UpdateVisibility();
 				return;
+			}
 
 			if (CommandBar.ActualWidth <= 0) return;
 
@@ -69,7 +72,7 @@ namespace Xamarin.Forms.Platform.UWP
 
 		void UpdateVisibility()
 		{
-			if (TitleView == null)
+			if (TitleView == null || TitleViewPresenter == null || CommandBar == null)
 				_titleViewRendererController.TitleViewVisibility = Visibility.Collapsed;
 			else
 				_titleViewRendererController.TitleViewVisibility = Visibility.Visible;
